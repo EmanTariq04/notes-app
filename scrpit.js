@@ -26,7 +26,7 @@ notesContainer.addEventListener("click", function(e) {
         updateStorage();
     } else if (e.target.tagName === "p") {
         notes = document.querySelectorAll(".input-box");
-        notes.forEach(nt => {
+        notes.forEach(nt => { //When you start typing in a note, it saves your changes automatically.
             nt.onkeyup = function(){
                 updateStorage();
             }
@@ -36,7 +36,10 @@ notesContainer.addEventListener("click", function(e) {
 
 document.addEventListener("keydown", event => {
     if(event.key === "Enter") {
-        document.execCommand("insertLineBreak");
+        document.execCommand("insertLineBreak"); 
+ //If you press Enter while typing in a note:
+// It inserts a line break instead of making a new paragraph.
+
         event.preventDefault()
     }
 })
